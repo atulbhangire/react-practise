@@ -3,6 +3,8 @@ import Options from "./Options.js";
 import Header from "./Header.js";
 import Action from "./Action.js";
 import AddOption from "./AddOption.js";
+import ExpensesDashboard from "./ExpensesDashboard";
+
 
 class Indecision extends React.Component {
     constructor(props) {
@@ -42,6 +44,7 @@ class Indecision extends React.Component {
 
         return (            
             <div>
+                <ExpensesDashboard />
                 <Header title={title} subtitle={subtitle} />
                 <Action />
                 <Options options={this.state.options} handleRemoveAll={this.handleRemoveAll}/>
