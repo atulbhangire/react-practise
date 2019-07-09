@@ -5,7 +5,9 @@ import ExpensesListItem from "./ExpensesListItem";
 const ExpensesList = (props) => (
     <div>
         <h1>Expenses List</h1>
-        <ExpensesListItem />
+        {props.expenses.map((expense) => {
+            return <ExpensesListItem {...expense}/>
+        }) }
     </div>
 );
 

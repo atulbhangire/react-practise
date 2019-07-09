@@ -1,25 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
+import { removeExpense } from "../actions/expenses";
 
-const ExpensesListItem = (props) => {    
-    return props.expenses.map((expense) => {
-        return (
-            <div>                
-                <p>Description: {expense.description}</p>
-                <p>Amount: {expense.amount}</p>
-                <p>Create At: {expense.createAt}</p>
-                <hr/>
-            </div>
-        )
-    });
-
-    
-}
-
-const mapStateToProps = (state) => {
-    return {
-        expenses: state.expenses
-    };
+const ExpensesListItem = ({dispatch, id, description, amount, createAt}) => {    
+    return (
+        <div>                
+            <p>Description: {description}</p>
+            <p>Amount: {amount}</p>
+            <p>Create At: {createAt}</p>
+            <button onClick={() => {
+                console.log(id);
+                dispatch(removeExpense({id}));
+            }} >Remove</button>
+            <hr/>
+        </div>
+    )
 };
 
-export default connect(mapStateToProps)(ExpensesListItem);
+export default connect()(ExpensesListItem);
