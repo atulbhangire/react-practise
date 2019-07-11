@@ -15,9 +15,10 @@ store.subscribe(() => {
 });
 
 //Dispatch Actions
-const gasBill = store.dispatch(addExpenses({description: "Gas Bill", note: "bill", amount: 600}));
-const waterBill = store.dispatch(addExpenses({description: "Water Bill", note: "bill", amount: 200}));
-const textFilter = store.dispatch(setTextFilter("bill"));
+const gasBill = store.dispatch(addExpenses({description: "Gas Bill", note: "bill", amount: 600, createdAt : 0}));
+const waterBill = store.dispatch(addExpenses({description: "Water Bill", note: "bill", amount: 200, createdAt : 2}));
+const rent = store.dispatch(addExpenses({description: "Rent", note: "rent", amount: 1200, createdAt : 1}));
+// const textFilter = store.dispatch(setTextFilter("bill"));
 
 
 const DashboardApp = () => (

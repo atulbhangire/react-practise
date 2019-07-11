@@ -4,7 +4,9 @@ import Header from "./Header.js";
 import Action from "./Action.js";
 import AddOption from "./AddOption.js";
 import ExpensesDashboard from "./ExpensesDashboard";
-
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import AddExpenses from "./AddExpenses";
+import NotFoundPage from "./NotFoundPage";
 
 class Indecision extends React.Component {
     constructor(props) {
@@ -44,11 +46,16 @@ class Indecision extends React.Component {
 
         return (            
             <div>
-                <ExpensesDashboard />
-                <Header title={title} subtitle={subtitle} />
-                <Action />
-                <Options options={this.state.options} handleRemoveAll={this.handleRemoveAll}/>
-                <AddOption options={this.state.options} handleAddOption={this.handleAddOption} />
+                <BrowserRouter>
+                    <Link to="/">Home</Link>
+                    <Link to="/create">Create</Link>
+                    <Switch>            
+                        <Route exact path="/" component={ExpensesDashboard} />
+                        <Route path="/create" component={AddExpenses} />
+                        <Route component={NotFoundPage} />
+                    </Switch>
+                </BrowserRouter>
+                
             </div>
         );
     }
