@@ -11,7 +11,7 @@ import ExpensesDashboard from "./components/ExpensesDashboard";
 const store = configStore();
 
 store.subscribe(() => {
-   console.log(store.getState()); 
+//    console.log(store.getState()); 
 });
 
 //Dispatch Actions
@@ -19,31 +19,6 @@ const gasBill = store.dispatch(addExpenses({description: "Gas Bill", note: "bill
 const waterBill = store.dispatch(addExpenses({description: "Water Bill", note: "bill", amount: 200, createdAt : 2}));
 const rent = store.dispatch(addExpenses({description: "Rent", note: "rent", amount: 1200, createdAt : 1}));
 // const textFilter = store.dispatch(setTextFilter("bill"));
-
-
-const DashboardApp = () => (
-    "This is dashboard app"
-);
-
-const CreateDashboardApp = () => {
-    return "This is create dashboard page";
-}
-
-const NotFoundPage = () => {
-    return "404!";
-}
-
-const routes = (
-    <BrowserRouter>
-        <Link to="/">Home</Link>
-        <Link to="/create">Create</Link>
-        <Switch>            
-            <Route exact path="/" component={ExpensesDashboard} />
-            <Route path="/create" component={CreateDashboardApp} />
-            <Route component={NotFoundPage} />
-        </Switch>
-    </BrowserRouter>
-);
 
 const jsx = (
     <Provider store={store}>

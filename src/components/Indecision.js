@@ -6,6 +6,7 @@ import AddOption from "./AddOption.js";
 import ExpensesDashboard from "./ExpensesDashboard";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import AddExpenses from "./AddExpenses";
+import EditExpenses from "./EditExpenses";
 import NotFoundPage from "./NotFoundPage";
 
 class Indecision extends React.Component {
@@ -52,6 +53,7 @@ class Indecision extends React.Component {
                     <Switch>            
                         <Route exact path="/" component={ExpensesDashboard} />
                         <Route path="/create" component={AddExpenses} />
+                        <Route path="/edit/:id" component={EditExpenses} />
                         <Route component={NotFoundPage} />
                     </Switch>
                 </BrowserRouter>
