@@ -28,7 +28,7 @@
     "css-loader": "^3.0.0",
     "history": "^4.9.0",
     "live-server": "^1.2.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "^16.8.6",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dates": "^20.2.5",
